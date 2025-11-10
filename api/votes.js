@@ -4,7 +4,7 @@ export default async function handler(req, res) {
     return res.status(401).json({ error: "missing/invalid api key" });
   }
 
-  const universeId = req.query.universeId || process.env.UNIVERSE_ID;
+  const universeId = req.query.universeId || "90404826372262";
   if (!universeId) return res.status(400).json({ error: "Missing universeId" });
 
   const ALLOWED = (process.env.ALLOWED_HOSTS || "games.roblox.com")
